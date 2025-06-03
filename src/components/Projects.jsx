@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { assets, projectsData } from "../assets/assets";
 import { motion } from "motion/react";
+import { useLocation } from "react-router-dom";
+
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardsToShow, setCardsToShow] = useState(1);
-  const [rotatedCards, setRotatedCards] = useState({}); // Track rotation state
+  const [rotatedCards, setRotatedCards] = useState({});
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const updateCardsToShow = () => {
@@ -24,7 +28,7 @@ const Projects = () => {
   const toggleRotation = (index) => {
     setRotatedCards((prev) => ({
       ...prev,
-      [index]: !prev[index], // Toggle rotation for the clicked card
+      [index]: !prev[index],
     }));
   };
 
@@ -40,12 +44,14 @@ const Projects = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: -200 }}
+      initial={{ opacity: 0, x: 200 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      className="container mx-auto py-4 pt-20 px-6 md:px-20 lg:px-32 my-20 w-full overflow-hidden"
+      className={`container mx-auto py-4 px-6 md:px-20 lg:px-32 my-20 w-full overflow-hidden ${
+        !isHome ? "pt-32" : ""
+      }`}
       id="Projects"
     >
       <h1 className="text-2xl sm:text-4xl font-bold mb-2 text-center">
@@ -75,6 +81,7 @@ const Projects = () => {
           <img src={assets.right_arrow} alt="Next Projects" />
         </button>
       </div>
+
       {/* project slider container */}
       <div className="overflow-hidden">
         <div
@@ -89,7 +96,7 @@ const Projects = () => {
               className={`relative flex-shrink-0 w-full sm:w-1/4 transform transition-transform duration-500 ${
                 rotatedCards[index] ? "rotate-180" : ""
               }`}
-              onClick={() => toggleRotation(index)} // Add click handler
+              onClick={() => toggleRotation(index)}
             >
               <img
                 src={project.image}
@@ -98,7 +105,7 @@ const Projects = () => {
               />
               <div className="absolute left-0 right-0 bottom-5 flex justify-center">
                 <div className="inline-block bg-white w-3/4 px-4 py-2 shadow-md">
-                  <h2 className=" text-xl font-semibold text-gray-800">
+                  <h2 className="text-xl font-semibold text-gray-800">
                     {project.title}
                   </h2>
                   <p className="text-gray-500 text-sm">

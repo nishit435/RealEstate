@@ -1,95 +1,126 @@
-import React, { use, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { assets } from "../assets/assets";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   useEffect(() => {
-    if (showMobileMenu) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [setShowMobileMenu]);
-  return (
-    <div className="absolute top-0 left-0 w-full z-10">
-      <div className="container mx-auto flex justify-between items-center py-4 px-6 md:px-20 lg:px-32 bg-transparent">
-        <img src={assets.jd1NBGPNG} className="w-[131px] h-[39px]" alt="" />
+    document.body.style.overflow = showMobileMenu ? "hidden" : "auto";
+    return () => (document.body.style.overflow = "auto");
+  }, [showMobileMenu]);
 
-        <ul className="hidden md:flex gap-7 text-white">
-          <a href="#Header" className="cursor-pointer hover:text-gray-400">
+  return (
+    <div
+      className={`top-0 left-0 w-full z-50 ${
+        isHome ? "absolute text-white" : "fixed bg-white text-black shadow-md"
+      }`}
+    >
+      <div className="container mx-auto flex justify-between items-center py-4 px-6 md:px-20 lg:px-32">
+        {/* Logo */}
+        <img
+          src={assets.mlogo}
+          className="w-[160px] h-[60px] md:w-[320px] md:h-[120px] drop-shadow-md object-contain"
+          alt="Logo"
+        />
+
+        {/* Nav Links */}
+        <ul className="hidden md:flex gap-7 items-center">
+          <Link to="/" className="cursor-pointer hover:text-gray-400">
             Home
-          </a>
-          <a href="#About" className="cursor-pointer hover:text-gray-400">
+          </Link>
+          <Link to="/about" className="cursor-pointer hover:text-gray-400">
             About
-          </a>
-          <a href="#Projects" className="cursor-pointer hover:text-gray-400">
+          </Link>
+          <Link to="/projects" className="cursor-pointer hover:text-gray-400">
             Projects
-          </a>
-          <a
-            href="#Testimonials"
+          </Link>
+          <Link to="/services" className="cursor-pointer hover:text-gray-400">
+            Services
+          </Link>
+          <Link
+            to="/testimonials"
             className="cursor-pointer hover:text-gray-400"
           >
             Testimonials
-          </a>
+          </Link>
+          {/* Reach Us Button */}
+          <Link
+            to="/contact"
+            className="ml-4 px-6 py-2 rounded-full text-sm font-medium transition-colors bg-blue-600 text-white hover:bg-blue-700"
+          >
+            Reach us out
+          </Link>
         </ul>
 
-        <button className="hidden md:block bg-white px-8 py-2 rounded-full text-black">
-          Sign up
-        </button>
+        {/* Mobile Menu Icon */}
         <img
           onClick={() => setShowMobileMenu(true)}
           src={assets.menu_icon}
-          className="md:hidden w-7"
-          alt=""
+          className="md:hidden w-7 cursor-pointer"
+          alt="Menu"
         />
       </div>
-      {/* ---------------mobile menu------------------ */}
+
+      {/* Mobile Menu */}
       <div
         className={`md:hidden ${
           showMobileMenu ? "fixed w-full" : "h-0 w-0"
-        } right-0 top-0 bottom-0 overflow-hidden bg-white text-black transition-all`}
+        } right-0 top-0 bottom-0 overflow-hidden bg-white text-black transition-all z-40`}
       >
         <div className="flex justify-end p-6 cursor-pointer">
           <img
             onClick={() => setShowMobileMenu(false)}
             src={assets.cross_icon}
             className="w-6"
-            alt=""
+            alt="Close"
           />
         </div>
-        <ul className="flex flex-col gap-2 justify-center items-center mt-5 px-5 text-lg font font-medium transition-all">
-          <a
-            href="#Header"
+        <ul className="flex flex-col gap-2 justify-center items-center mt-5 px-5 text-lg font-medium">
+          <Link
+            to="/"
             onClick={() => setShowMobileMenu(false)}
-            className="px-4 py-2 rounded-b-full inline-block"
+            className="px-4 py-2"
           >
             Home
-          </a>
-          <a
-            href="#About"
+          </Link>
+          <Link
+            to="/about"
             onClick={() => setShowMobileMenu(false)}
-            className="px-4 py-2 rounded-b-full inline-block"
+            className="px-4 py-2"
           >
             About
-          </a>
-          <a
-            href="#Projects"
+          </Link>
+          <Link
+            to="/projects"
             onClick={() => setShowMobileMenu(false)}
-            className="px-4 py-2 rounded-b-full inline-block"
+            className="px-4 py-2"
           >
             Projects
-          </a>
-          <a
-            href="#Testimonials"
+          </Link>
+          <Link
+            to="/testimonials"
             onClick={() => setShowMobileMenu(false)}
-            className="px-4 py-2 rounded-b-full inline-block"
+            className="px-4 py-2"
           >
             Testimonials
-          </a>
+          </Link>
+          <Link
+            to="/services"
+            onClick={() => setShowMobileMenu(false)}
+            className="px-4 py-2"
+          >
+            Services
+          </Link>
+          <Link
+            to="/contact"
+            onClick={() => setShowMobileMenu(false)}
+            className="px-4 py-2 bg-blue-600 text-white rounded-full mt-4"
+          >
+            Reach us out
+          </Link>
         </ul>
       </div>
     </div>

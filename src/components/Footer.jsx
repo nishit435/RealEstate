@@ -1,19 +1,19 @@
 import React from "react";
 import { assets } from "../assets/assets";
+import { PhoneIcon, MailIcon } from "@heroicons/react/outline"; // You can switch to solid if preferred
+import { FaInstagram } from "react-icons/fa"; // Instagram icon from react-icons
 
 const Footer = () => {
   return (
     <div className="pt-10 px-4 md:px-20 lg:px-32 bg-gray-900 w-full overflow-hidden">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-start">
+        {/* Logo + Slogan */}
         <div className="w-full md:w-1/3 mb-8 md:mb-0">
-          <img src={assets.jd1} alt="" />
-          <p className="text-gray-400 mt-4">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt
-            rerum laboriosam sequi corrupti, nulla expedita exercitationem autem
-            dicta, odit repudiandae reiciendis nam a recusandae fuga veniam.
-            Molestias, vero. Sit, dolorum.
-          </p>
+          <img src={assets.svemt} alt="Logo" className="w-[200px] h-auto" />
+          <p className="text-gray-400 mt-4">Build tomorrow, Today.</p>
         </div>
+
+        {/* Company Links */}
         <div className="w-full md:w-1/5 mb-8 md:mb-0">
           <h3 className="text-white text-lg font-bold mb-4">Company</h3>
           <ul className="flex flex-col gap-2 text-gray-400">
@@ -27,29 +27,46 @@ const Footer = () => {
               Contact Us
             </a>
             <a href="#" className="hover:text-white">
-              Privacy policy
+              Privacy Policy
             </a>
           </ul>
         </div>
-        <div>
-          <h3 className="text-white text-lg font-bold mb-4">
-            Subscribe to our newsletter
-          </h3>
-          <p className="text-gray-400 mb-4 max-w-80">
-            The latest news, articles, and resources, sent to your inbox weekly.
-          </p>
-          <div className="flex gap-2">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="p-2 rounded bg-gray-800 text-gray-400 border-gray-700 focus:outline-none w-fll md:w-auto"
-            />
-            <button className="py-2 px-4 ronded bg-blue-500 text-white">
-              Subscribe
-            </button>
-          </div>
+
+        {/* Contact + Social Links */}
+        <div className="w-full md:w-1/3 text-gray-400">
+          <h3 className="text-white text-lg font-bold mb-4">Get in Touch</h3>
+          <ul className="flex flex-col gap-3">
+            <li className="flex items-center gap-2">
+              <FaInstagram className="text-pink-500 w-5 h-5" />
+              <a
+                href="https://instagram.com/siddhivinayak_emt"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white"
+              >
+                @siddhivinayak_emt
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <MailIcon className="w-5 h-5" />
+              <a
+                href="mailto:yourmail@example.com"
+                className="hover:text-white"
+              >
+                yourmail@example.com
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <PhoneIcon className="w-5 h-5" />
+              <a href="tel:+919979898297" className="hover:text-white">
+                +91 9979 8982 97/98
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
+
+      {/* Copyright */}
       <div className="border-t border-gray-700 py-4 mt-10 text-center text-gray-500">
         Copyright 2025 © All rights reserved Nishit
       </div>

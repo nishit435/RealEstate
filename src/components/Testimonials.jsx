@@ -1,7 +1,12 @@
 import React from "react";
 import { assets, testimonialsData } from "../assets/assets";
 import { motion } from "motion/react";
+import { useLocation } from "react-router-dom";
+
 const Testimonials = () => {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
   return (
     <motion.div
       initial={{ opacity: 0, x: 200 }}
@@ -9,8 +14,10 @@ const Testimonials = () => {
       transition={{ duration: 1 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      className="container mx-auto py-10 lg:px-32 w-full overflow-hidden"
-      id="Testimonials"
+      className={`container mx-auto py-4 px-6 md:px-20 lg:px-32 my-20 w-full overflow-hidden ${
+        !isHome ? "pt-32" : ""
+      }`}
+      id="Projects"
     >
       <h1 className="text-2xl sm:text-4xl font-bold mb-2 text-center">
         Customer{" "}
@@ -19,12 +26,13 @@ const Testimonials = () => {
         </span>
       </h1>
       <p className="text-center text-gray-500 mb-12 max-w-80 mx-auto">
-        From those how found a home with us
+        From those who found a home with us
       </p>
+
       <div className="flex flex-wrap justify-center gap-10">
         {testimonialsData.map((testimonial, index) => (
           <div
-            key={index}
+            key={testimonial.id || index}
             className="max-w-[340px] border shadow-lg rounded px-8 py-12 text-center"
           >
             <img
@@ -36,11 +44,13 @@ const Testimonials = () => {
               {testimonial.name}
             </h2>
             <p className="text-gray-500 mb-4 text-sm">{testimonial.title}</p>
+
             <div className="flex justify-center gap-1 mb-4 text-red-500">
-              {Array.from({ length: testimonial.rating }, (item, index) => (
-                <img src={assets.star_icon} alt="" />
+              {Array.from({ length: testimonial.rating }, (_, starIndex) => (
+                <img key={starIndex} src={assets.star_icon} alt="Star" />
               ))}
             </div>
+
             <p className="text-gray-600">{testimonial.text}</p>
           </div>
         ))}

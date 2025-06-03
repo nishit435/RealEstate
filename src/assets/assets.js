@@ -7,13 +7,16 @@ import left_arrow from "./left_arrow.svg";
 import right_arrow from "./right_arrow.svg";
 import header_img from "./header_img.png";
 import brand_img from "./brand_img.png";
-import jd1 from "./jd1.png";
-import jd11 from "./jd1-1.png";
-import jd2 from "./jd2.png";
-import jd3 from "./jd3.png";
-import jd1NBGPNG from "./jd1NBGPNG.png";
-import jd2NBGPNG from "./jd2NBGPNG.png";
-import jd3NBGPNG from "./jd3NBGPNG.png";
+import check from "./check.png";
+import seven from "./seven.jpg";
+import abtcmp1 from "./abtcmp1.jpg";
+import abtcmp2 from "./abtcmp2.jpg";
+import abtcmp3 from "./abtcmp3.jpg";
+import abtcmp4 from "./abtcmp4.jpg";
+import mainlogo from "./mainlogo.svg";
+import mlogo from "./mlogo.svg";
+import svemt from "./svemt.jpg";
+import five from "./five.mp4";
 import project_img_1 from "./project_img_1.jpg";
 import project_img_2 from "./project_img_2.jpg";
 import project_img_3 from "./project_img_3.jpg";
@@ -30,15 +33,18 @@ export const assets = {
   cross_icon,
   menu_icon,
   star_icon,
+  mainlogo,
   header_img,
   brand_img,
-  jd1,
-  jd11,
-  jd2,
-  jd3,
-  jd1NBGPNG,
-  jd2NBGPNG,
-  jd3NBGPNG,
+  check,
+  seven,
+  svemt,
+  abtcmp1,
+  abtcmp2,
+  abtcmp3,
+  abtcmp4,
+  five,
+  mlogo,
   project_img_1,
   project_img_2,
   project_img_3,
