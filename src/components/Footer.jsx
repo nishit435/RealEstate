@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-start">
         {/* Logo + Slogan */}
         <div className="w-full md:w-1/3 mb-8 md:mb-0">
-          <img src={assets.svemt} alt="Logo" className="w-[200px] h-auto" />
+          <img src={assets.mlogo} alt="Logo" className="w-[200px] h-auto" />
           <p className="text-gray-400 mt-4">Build tomorrow, Today.</p>
         </div>
 
@@ -50,16 +50,22 @@ const Footer = () => {
             <li className="flex items-center gap-2">
               <MailIcon className="w-5 h-5" />
               <a
-                href="mailto:yourmail@example.com"
+                href="mailto:siddhivinayakearthmovers17@gmail.com"
                 className="hover:text-white"
               >
-                yourmail@example.com
+                siddhivinayakearthmovers17@gmail.com
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <PhoneIcon className="w-5 h-5" />
+              <a href="tel:+919979898298" className="hover:text-white">
+                Baldevbhai C. Patel: +91 99798 98298
               </a>
             </li>
             <li className="flex items-center gap-2">
               <PhoneIcon className="w-5 h-5" />
               <a href="tel:+919979898297" className="hover:text-white">
-                +91 9979 8982 97/98
+                Paresh K. Patel: +91 99798 98297
               </a>
             </li>
           </ul>
@@ -68,7 +74,8 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="border-t border-gray-700 py-4 mt-10 text-center text-gray-500">
-        Copyright 2025 © All rights reserved Nishit
+        Copyright 2025 © All rights reserved Siddhi Vinayak Earth Movers &
+        Transport
       </div>
     </div>
   );

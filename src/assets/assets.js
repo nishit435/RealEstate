@@ -26,6 +26,34 @@ import project_img_6 from "./project_img_6.jpg";
 import profile_img_1 from "./profile_img_1.png";
 import profile_img_2 from "./profile_img_2.png";
 import profile_img_3 from "./profile_img_3.png";
+import filling from "./filling.jpg";
+import rental from "./rental.jpg";
+import excavation from "./excavation.jpg";
+import suratdiamond from "./suratdiamond.jpg";
+import zyduscorp from "./zyduscorp.jpg";
+import zydushosp from "./zydushosp.jpg";
+import shilptwin from "./shilptwin.jpeg";
+import novotel from "./novotel.jpeg";
+import shapath5 from "./shapath5.jpeg";
+import iim from "./iim.jpg";
+import hiranandani from "./hiranandani.jpg";
+import grandmercure from "./grandmercure.jpg";
+import presidium from "./presidium.jpg";
+import celestial from "./celestial.jpg";
+import skyline from "./skyline.jpg";
+import serene from "./serene.jpg";
+import complogo1 from "./complogo1.jpg";
+import complogo2 from "./complogo2.png";
+import complogo3 from "./complogo3.png";
+import complogo4 from "./complogo4.png";
+import complogo5 from "./complogo5.png";
+import complogo6 from "./complogo6.png";
+import complogo7 from "./complogo7.png";
+import complogo8 from "./complogo8.png";
+import complogo9 from "./complogo9.png";
+// import complogo10 from "./complogo10.png";
+
+import { s } from "motion/react-client";
 
 export const assets = {
   logo,
@@ -51,44 +79,101 @@ export const assets = {
   project_img_4,
   left_arrow,
   right_arrow,
+  filling,
+  rental,
+  excavation,
+  suratdiamond,
+  zyduscorp,
+  zydushosp,
+  shilptwin,
+  hiranandani,
+  grandmercure,
+  presidium,
+  novotel,
+  shapath5,
+  serene,
+  skyline,
+  celestial,
+  iim,
+  complogo1,
+  complogo2,
+  complogo3,
+  complogo4,
+  complogo5,
+  complogo6,
+  complogo7,
+  complogo8,
+  complogo9,
+  // complogo10,
 };
 
 export const projectsData = [
   {
-    title: "Skyline Haven",
-    price: "$2,50,000",
-    location: "California",
-    image: project_img_1,
+    title: "Zydus Hospital",
+
+    location: "S.G. Highway, Ahmedabad",
+    image: zydushosp,
+  },
+
+  {
+    title: "Hiranandani Signature",
+    location: "GIFT City, Gandhinagar",
+    image: hiranandani,
   },
   {
-    title: "Vista Verde",
-    price: "$2,50,000",
-    location: "San Francisco",
-    image: project_img_2,
+    title: "Shilp Twin Towers",
+    location: "GIFT City, Gandhinagar",
+    image: shilptwin,
   },
   {
-    title: "Serenity Suites",
-    price: "$2,50,000",
-    location: "Chicago",
-    image: project_img_3,
+    title: "Zydus Corporate House",
+    location: "Vaishnodevi,SG Highway",
+    image: zyduscorp,
   },
   {
-    title: "Central Square",
-    price: "$2,50,000",
-    location: "Los Angeles",
-    image: project_img_4,
+    title: "Surat Diamond Bourse",
+    location: "Surat, Gujarat",
+    image: suratdiamond,
   },
   {
-    title: "Vista Verde",
-    price: "$2,50,000",
-    location: "San Francisco",
-    image: project_img_5,
+    title: "Grand Mercure",
+    location: "GIFT City, Gandhinagar",
+    image: grandmercure,
   },
   {
-    title: "Serenity Suites",
-    price: "$2,50,000",
-    location: "Chicago",
-    image: project_img_6,
+    title: "Gala Presidium",
+    location: "ISCKON-Ambli Road, Ahmedabad",
+    image: presidium,
+  },
+  {
+    title: "Indian Institute of Management (IIM-A)",
+    location: "Vastrapur, Ahmedabad",
+    image: iim,
+  },
+  {
+    title: "Hotel Novotel Ahmedabad",
+    location: "S.G. Highway, Ahmedabad",
+    image: novotel,
+  },
+  {
+    title: "Shapath 5",
+    location: "S.G. Highway, Ahmedabad",
+    image: shapath5,
+  },
+  {
+    title: "Shilp Serene",
+    location: "Shilaj Circle, Ahmedabad",
+    image: serene,
+  },
+  {
+    title: "Shilp Celestial",
+    location: "Vaishnodevi, Ahmedabad",
+    image: celestial,
+  },
+  {
+    title: "Shilp Skyline",
+    location: "Adani Shantigram, Ahmedabad",
+    image: skyline,
   },
 ];
 
@@ -117,4 +202,18 @@ export const testimonialsData = [
     rating: 5,
     text: "From the very first meeting, they understood my vision and helped me find the perfect property. Their attention to detail and commitment to client satisfaction is unmatched.",
   },
+];
+
+export const companyLogos = [
+  { image: complogo1 },
+  { image: complogo2 },
+  { image: complogo3 },
+  { image: complogo4 },
+  { image: complogo5 },
+  { image: complogo9 },
+  { image: complogo6 },
+  { image: complogo7 },
+  { image: complogo8 },
+  // { complogo9 },
+  // { complogo10 },
 ];

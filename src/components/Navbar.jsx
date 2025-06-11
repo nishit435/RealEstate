@@ -15,7 +15,9 @@ const Navbar = () => {
   return (
     <div
       className={`top-0 left-0 w-full z-50 ${
-        isHome ? "absolute text-white" : "fixed bg-white text-black shadow-md"
+        isHome
+          ? "absolute text-white"
+          : "fixed bg-blue-950 text-white shadow-md"
       }`}
     >
       <div className="container mx-auto flex justify-between items-center py-4 px-6 md:px-20 lg:px-32">

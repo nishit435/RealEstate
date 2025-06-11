@@ -38,9 +38,9 @@ const Header = () => {
         viewport={{ once: true }}
         className="relative z-10 text-center px-4 md:px-20 lg:px-32"
       >
-        <h2 className="text-4xl sm:text-5xl md:text-[82px] inline-block max-w-3xl font-semibold pt-20">
+        {/* <h2 className="text-4xl sm:text-5xl md:text-[82px] inline-block max-w-3xl font-semibold pt-20">
           Build Tomorrow, Today.
-        </h2>
+        </h2> */}
       </motion.div>
     </div>
   );

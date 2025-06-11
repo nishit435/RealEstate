@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
+import { assets } from "../assets/assets";
 
 const Services = () => {
   const location = useLocation();
@@ -11,19 +12,19 @@ const Services = () => {
       title: "Soil Filling",
       description:
         "We provide expert soil filling solutions for residential and commercial sites, ensuring ground stability and compliance.",
-      image: "https://via.placeholder.com/800x500?text=Soil+Filling",
+      image: assets.filling,
     },
     {
       title: "Soil Excavation",
       description:
         "Our excavation services are precise and efficient, tailored for foundations, trenches, and site preparation.",
-      image: "https://via.placeholder.com/800x500?text=Soil+Excavation",
+      image: assets.excavation,
     },
     {
       title: "Machinery Rental",
       description:
         "Get access to our fleet of high-performance machines for short- or long-term rental with professional support.",
-      image: "https://via.placeholder.com/800x500?text=Machinery+Rental",
+      image: assets.rental,
     },
   ];
 
@@ -69,30 +70,34 @@ const Services = () => {
               }`}
               style={{ minHeight: isActive ? "100%" : "auto" }}
             >
-              <img
-                src={service.image}
-                alt={service.title}
-                className="w-full h-64 object-cover"
-              />
-              <motion.div
-                layout
-                className={`p-6 transition-opacity duration-300 ${
-                  isActive ? "opacity-100" : "opacity-60"
-                }`}
-              >
-                <h2 className="text-xl font-semibold mb-2">{service.title}</h2>
-                {isActive && (
-                  <motion.p
-                    layout
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="text-gray-600 text-sm"
-                  >
-                    {service.description}
-                  </motion.p>
-                )}
-              </motion.div>
+              <div className="relative w-full h-full">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="absolute inset-0 w-full h-full object-cover z-0"
+                />
+                <motion.div
+                  layout
+                  className={`relative z-10 p-6 text-white bg-black/50 h-full flex flex-col justify-end transition-opacity duration-300 ${
+                    isActive ? "opacity-100" : "opacity-80"
+                  }`}
+                >
+                  <h2 className="text-xl font-semibold mb-2">
+                    {service.title}
+                  </h2>
+                  {isActive && (
+                    <motion.p
+                      layout
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      className="text-sm"
+                    >
+                      {service.description}
+                    </motion.p>
+                  )}
+                </motion.div>
+              </div>
             </motion.div>
           );
         })}
